@@ -20,8 +20,23 @@ dp.include_router(router)
 # Логика бота (обработка команд)
 @router.message(Command("start"))
 async def cmd_start(message: types.Message):
-    await message.answer("Бэкенд работает. Откройте ссылку на приложение, чтобы оформить тестовый заказ.")
-
+    # Создаем кнопку под сообщением
+    kb = [
+        [InlineKeyboardButton(
+            text="🚀 ОСТАВИТЬ ЗАЯВКУ", 
+            web_app=WebAppInfo(url=os.environ.get("WEBHOOK_URL")) # Ссылка подставится автоматически
+        )]
+    ]
+    keyboard = InlineKeyboardMarkup(inline_keyboard=kb)
+    
+    # Текст приветствия
+    welcome_text = (
+        "👋 Добро пожаловать!\n\n"
+        "Мы разрабатываем современные Telegram Mini Apps для бизнеса.\n"
+        "Нажмите на кнопку ниже, чтобы заполнить короткий бриф, и мы свяжемся с вами в течение 15 минут."
+    )
+    
+    await message.answer(welcome_text, reply_markup=keyboard)
 # Жизненный цикл FastAPI (Установка вебхука при старте)
 @asynccontextmanager
 async def lifespan(app: FastAPI):
