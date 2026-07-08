@@ -137,7 +137,7 @@ html_content = """
       <div class="mb-5"><label class="block text-sm font-semibold mb-3">Стиль дизайна <span class="text-orange-400">*</span></label><div class="grid grid-cols-2 gap-2" id="designStyles"></div></div>
       <div class="mb-5"><label class="block text-sm font-semibold mb-3">Цветовая гамма</label><div class="space-y-2" id="palettes"></div></div>
       <div class="mb-5"><label class="block text-sm font-semibold mb-3">Необходимый функционал</label><div class="flex flex-wrap gap-2" id="features"></div></div>
-      <div class="mb-5"><label class="block text-sm font-semibold mb-3">Бюджет: <span id="budgetLabel" class="text-orange-400 font-bold">50 000 ₽</span></label><input type="range" id="budget" min="30000" max="500000" step="10000" value="50000"><div class="flex justify-between text-xs text-gray-500 mt-2"><span>30K ₽</span><span>500K+ ₽</span></div></div>
+      <div class="mb-5"><label class="block text-sm font-semibold mb-3">Бюджет: <span id="budgetLabel" class="text-orange-400 font-bold">50 000 ₽</span></label><input type="range" id="budget" min="10000" max="500000" step="10000" value="50000"><div class="flex justify-between text-xs text-gray-500 mt-2"><span>30K ₽</span><span>500K+ ₽</span></div></div>
       <div class="mb-5"><label class="block text-sm font-semibold mb-3">Сроки запуска <span class="text-orange-400">*</span></label><div class="flex flex-wrap gap-2" id="timelines"></div></div>
       <div><label class="block text-sm font-semibold mb-2">Дополнительные пожелания</label><textarea class="input" id="comments" rows="3" placeholder="Опишите ваши идеи, референсы..."></textarea></div>
     </section>
