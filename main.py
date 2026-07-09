@@ -11,7 +11,7 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
 logging.basicConfig(level=logging.INFO)
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 WEBHOOK_URL = os.environ.get("WEBHOOK_URL")
-ADMIN_ID = 664576828 # <-- Ваш ID, куда будут приходить заявки
+ADMIN_ID = 7120851349 # <-- Ваш ID, куда будут приходить заявки
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
@@ -272,7 +272,7 @@ async def submit_order(request: Request):
 {data.get('comments', '—')}
 """
     
-    # ОТПРАВЛЯЕМ ВАМ В ЛИЧКУ (ID 664576828)
+    # ОТПРАВЛЯЕМ ВАМ В ЛИЧКУ
     try:
         await bot.send_message(chat_id=ADMIN_ID, text=msg_text, parse_mode="HTML")
     except Exception as e:
